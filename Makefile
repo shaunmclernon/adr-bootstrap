@@ -41,28 +41,28 @@ endif
 adr-init: pre-init
 	@if [ ! -d "$(ADR_DOCS)" ]; then ADR_DATE=$(BRITISH_DATE) adr init $(ADR_DOCS); fi
 
-## adr                            : Generate a new ADR readme index and graph.
+## adr                            : Generate a new ADR index, graph and README.md
 adr: adr-init adr-graph adr-readme
 	@echo "\n$(ADR_DOCS)/README.md has been regenerated"
 
-## adr-new DECISON="new decision" : Generator a new decision record
+## adr-new DECISON="new decision" : Generate a new decision record
 DECISION?=rename_this_decision
 adr-new: adr-init
 	ADR_DATE=$(BRITISH_DATE) adr new $(DECISION)
 
-## adr-graph (optional)           : Dynamically generic the visual graph of of the ADRs
+## adr-graph (optional)           : Dynamically generate the visual graph of the ADRs
 adr-graph:
 	adr generate graph > $(ADR_DOCS)/graph.dot
 	dot -Tpng $(ADR_DOCS)/graph.dot -o $(ADR_DOCS)/graph.png
 
-## adr-readme (optional)          : Dynamically generate the ADR readme.
+## adr-readme (optional)          : Dynamically generate the ADR readme
 adr-readme:
 	adr generate toc > $(ADR_DOCS)/README.md
 	@echo "\nVisualise the above records in the graph form below:" >> $(ADR_DOCS)/README.md
 	@echo "\n![graph](graph.png)" >> $(ADR_DOCS)/README.md
 
 clean:
-	rm -rf $(ADR_DOCS_BASE)
+	@rm -rf $(ADR_DOCS_BASE)
 
 test: clean
 	bats tests
