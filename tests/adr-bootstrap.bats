@@ -20,10 +20,10 @@ load test_helper
 
   assert_equal "${lines[0]}"  "Architectural Decision Record (ADRs) task generator"
   assert_equal "${lines[1]}"  "Options:"
-  assert_equal "${lines[2]}"  " adr                            : Generate a new ADR index, graph and README.md"
-  assert_equal "${lines[3]}"  " adr-new DECISON=\"new decision\" : Generate a new decision record"
-  assert_equal "${lines[4]}"  " adr-graph (optional)           : Dynamically generate the visual graph of the ADRs"
-  assert_equal "${lines[5]}"  " adr-readme (optional)          : Dynamically generate the ADR readme"
+  assert_equal "${lines[2]}"  " adr                             : Generate a new ADR index, graph and README.md"
+  assert_equal "${lines[3]}"  " adr-new DECISION=\"new decision\" : Generate a new decision record"
+  assert_equal "${lines[4]}"  " adr-graph (optional)            : Dynamically generate the visual graph of the ADRs"
+  assert_equal "${lines[5]}"  " adr-readme (optional)           : Dynamically generate the ADR readme"
 }
 
 @test "Should verify dependencies are installed." {

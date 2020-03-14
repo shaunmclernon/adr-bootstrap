@@ -37,10 +37,10 @@ make
 Architectural Decision Record (ADRs) task generator
 
 Options:
- adr                            : Generate a new ADR readme index and graph.
- adr-new DECISON="new decision" : Generator a new decision record
- adr-graph (optional)           : Dynamically generic the visual graph of of the ADRs
- adr-readme (optional)          : Dynamically generate the ADR readme.
+ adr                             : Generate a new ADR index, graph and README.md
+ adr-new DECISION="new decision" : Generate a new decision record
+ adr-graph (optional)            : Dynamically generate the visual graph of the ADRs
+ adr-readme (optional)           : Dynamically generate the ADR readme
 ```
 
 The first time, you call any of these commands, it will initialise the folder to store this decisions, currently; `doc/architecture/decisions`
@@ -62,7 +62,7 @@ View the generated `doc/architecture/decisions/README.md` to see the list of ADR
 Recording a new decision is as simple as follows. Using this wrapper approach is purely a helper so that the dates are written in British format. You can still use the adr tools as normal should you wish.
 
 ```bash
-make adr-new DECISON="make first decision"
+make adr-new DECISION="make first decision"
 ```
 
 ## Development
