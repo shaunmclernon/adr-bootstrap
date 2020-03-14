@@ -18,8 +18,12 @@ The following dependencies are required;
 
 This bootstrapping process will install a [makefile] which is the tool that will provide the automation.
 
+>WARNING: If your project already uses a [makefile] then this process will overwrite it - in that case, you will have to manually add the tasks to your makefile.
+
 ```bash
+cd <new-project>
 curl -L -o Makefile https://raw.githubusercontent.com/shaunmclernon/adr-bootstrap/master/Makefile
+make adr
 ```
 
 That's it! It is ready to use.
