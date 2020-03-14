@@ -61,8 +61,17 @@ Recording a new decision is as simple as follows. Using this wrapper approach is
 make adr-new DECISON="make first decision"
 ```
 
+## Development
+
+This is a `makefile`, so all the normal rules of using make are applied. Testing is performed using [bats].
+
+```bash
+bats tests
+```
+
 [Architecture Decision Records]: http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions
 [make]: https://www.gnu.org/software/make/
-[adr-tools]: hhttps://github.com/npryce/adr-tools/blob/master/INSTALL.md
+[adr-tools]: https://github.com/npryce/adr-tools/blob/master/INSTALL.md
 [graphviz]: https://www.graphviz.org/download/
 [makefile]: https://en.wikipedia.org/wiki/Makefile
+[bats]: https://github.com/bats-core/bats-core

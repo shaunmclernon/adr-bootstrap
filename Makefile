@@ -60,3 +60,9 @@ adr-readme:
 	adr generate toc > $(ADR_DOCS)/README.md
 	@echo "\nVisualise the above records in the graph form below:" >> $(ADR_DOCS)/README.md
 	@echo "\n![graph](graph.png)" >> $(ADR_DOCS)/README.md
+
+clean:
+	rm -rf $(ADR_DOCS_BASE)
+
+test: clean
+	bats tests
